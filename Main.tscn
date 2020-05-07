@@ -1,0 +1,178 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Components/PropertyPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+
+[node name="Main" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0.0313726, 0.0235294, 0.0352941, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CreateNewMonster" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -201.5
+margin_top = 40.0
+margin_right = 201.5
+margin_bottom = 83.0
+text = "Create new Monster Prompt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Properties" type="GridContainer" parent="."]
+margin_left = 56.0
+margin_top = 120.0
+margin_right = 964.0
+margin_bottom = 524.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PropertyPanel" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 200.0
+property_identifier = "type"
+
+[node name="VBox" parent="Properties/PropertyPanel" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel/VBox" index="0"]
+margin_right = 280.0
+text = "Creature Type:"
+
+[node name="Details" parent="Properties/PropertyPanel/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel/VBox" index="2"]
+margin_right = 280.0
+
+[node name="PropertyPanel2" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 304.0
+margin_right = 604.0
+margin_bottom = 200.0
+property_identifier = "secondary_type"
+
+[node name="VBox" parent="Properties/PropertyPanel2" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel2/VBox" index="0"]
+margin_right = 280.0
+text = "Secondary Type:"
+
+[node name="Details" parent="Properties/PropertyPanel2/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel2/VBox" index="2"]
+margin_right = 280.0
+
+[node name="PropertyPanel3" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 608.0
+margin_right = 908.0
+margin_bottom = 200.0
+property_identifier = "color"
+
+[node name="VBox" parent="Properties/PropertyPanel3" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel3/VBox" index="0"]
+margin_right = 280.0
+text = "Color Scheme:"
+
+[node name="Details" parent="Properties/PropertyPanel3/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel3/VBox" index="2"]
+margin_right = 280.0
+
+[node name="PropertyPanel4" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 300.0
+margin_bottom = 404.0
+property_identifier = "attack"
+
+[node name="VBox" parent="Properties/PropertyPanel4" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel4/VBox" index="0"]
+margin_right = 280.0
+text = "Attack:"
+
+[node name="Details" parent="Properties/PropertyPanel4/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel4/VBox" index="2"]
+margin_right = 280.0
+
+[node name="PropertyPanel5" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 304.0
+margin_top = 204.0
+margin_right = 604.0
+margin_bottom = 404.0
+property_identifier = "features"
+
+[node name="VBox" parent="Properties/PropertyPanel5" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel5/VBox" index="0"]
+margin_right = 280.0
+text = "Features:"
+
+[node name="Details" parent="Properties/PropertyPanel5/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel5/VBox" index="2"]
+margin_right = 280.0
+
+[node name="PropertyPanel6" parent="Properties" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 608.0
+margin_top = 204.0
+margin_right = 908.0
+margin_bottom = 404.0
+property_identifier = "trivia"
+
+[node name="VBox" parent="Properties/PropertyPanel6" index="0"]
+margin_right = 290.0
+
+[node name="Title" parent="Properties/PropertyPanel6/VBox" index="0"]
+margin_right = 280.0
+text = "Behaviour:"
+
+[node name="Details" parent="Properties/PropertyPanel6/VBox" index="1"]
+margin_right = 280.0
+
+[node name="ReRoll" parent="Properties/PropertyPanel6/VBox" index="2"]
+margin_right = 280.0
+[connection signal="pressed" from="CreateNewMonster" to="." method="_on_CreateNewMonster_pressed"]
+
+[editable path="Properties/PropertyPanel"]
+
+[editable path="Properties/PropertyPanel2"]
+
+[editable path="Properties/PropertyPanel3"]
+
+[editable path="Properties/PropertyPanel4"]
+
+[editable path="Properties/PropertyPanel5"]
+
+[editable path="Properties/PropertyPanel6"]
